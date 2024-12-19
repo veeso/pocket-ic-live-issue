@@ -1,0 +1,12 @@
+[package]
+name = "did"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "did"
+
+[dependencies]
+candid = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

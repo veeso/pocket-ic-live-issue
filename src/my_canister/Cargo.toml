@@ -1,0 +1,23 @@
+[package]
+name = "my_canister"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+export-api = []
+
+[dependencies]
+anyhow = { workspace = true }
+candid = { workspace = true }
+did = { path = "../did" }
+ic-canister = { workspace = true }
+ic-exports = { workspace = true, features = ["icrc", "ledger"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }

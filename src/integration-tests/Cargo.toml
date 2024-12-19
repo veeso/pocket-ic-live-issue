@@ -1,0 +1,24 @@
+[package]
+name = "integration-tests"
+version.workspace = true
+edition.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+candid = { workspace = true }
+did = { path = "../did" }
+ic-exports = { workspace = true, features = ["icrc", "ledger"] }
+ic-canister-client = { workspace = true, features = ["pocket-ic-client"] }
+once_cell = { workspace = true }
+serde = { workspace = true }
+
+[dev-dependencies]
+anyhow = { workspace = true }
+ic-test-utils = { workspace = true }
+tokio = { workspace = true, features = ["fs", "process"] }
+
+# IC deps
+[features]
+pocket_ic_integration_test = []
+dfx_tests = []

@@ -1,0 +1,10 @@
+{
+  "canisters": {
+    "my_canister": {
+      "build": "",
+      "candid": ".artifact/my_canister.did",
+      "wasm": ".artifact/my_canister.wasm.gz",
+      "type": "custom"
+    }
+  }
+}
