@@ -117,6 +117,10 @@ impl PocketIcTestContext {
         self.update_live("posts", ()).await
     }
 
+    pub async fn storage_posts(&self) -> anyhow::Result<Vec<Post>> {
+        self.query("storage_posts", ()).await
+    }
+
     /// Performs update call with the given arguments.
     async fn update<T, R>(&self, method: &str, args: T) -> anyhow::Result<R>
     where

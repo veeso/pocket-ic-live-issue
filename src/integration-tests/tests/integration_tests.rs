@@ -141,3 +141,168 @@ async fn test_should_get_posts_1() {
     let posts = ctx.get_posts().await.expect("posts should be fetched");
     assert_eq!(posts.len(), 1);
 }
+
+#[tokio::test]
+async fn test_should_get_stored_posts() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_2() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_3() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_4() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_5() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_6() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_7() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_8() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_9() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_10() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
+
+#[tokio::test]
+async fn test_should_get_stored_posts_11() {
+    let mut ctx = PocketIcTestContext::new()
+        .await
+        .expect("context should be created");
+
+    ctx.live().await;
+
+    // wait for 5 seconds
+    tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+
+    let posts = ctx.storage_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
+}
