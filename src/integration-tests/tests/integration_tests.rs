@@ -138,19 +138,6 @@ async fn test_should_get_posts_1() {
 
     ctx.live().await;
 
-    for retry in 0..100 {
-        match ctx.get_posts().await {
-            Ok(posts) => {
-                assert!(posts.len() > 0);
-                break;
-            }
-            Err(e) => {
-                if retry == 99 {
-                    panic!("Failed to get posts: {}", e);
-                }
-            }
-        }
-
-        tokio::time::sleep(std::time::Duration::from_millis(300)).await;
-    }
+    let posts = ctx.get_posts().await.expect("posts should be fetched");
+    assert_eq!(posts.len(), 1);
 }

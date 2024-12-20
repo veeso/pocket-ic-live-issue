@@ -114,7 +114,7 @@ impl PocketIcTestContext {
     }
 
     pub async fn get_posts(&self) -> anyhow::Result<Vec<Post>> {
-        self.update("posts", ()).await
+        self.update_live("posts", ()).await
     }
 
     /// Performs update call with the given arguments.
@@ -128,6 +128,35 @@ impl PocketIcTestContext {
         let res = self
             .client
             .update_call(self.canister, Self::admin(), method, args)
+            .await
+            .map_err(|e| anyhow::anyhow!(e))?;
+
+        let reply = match res {
+            WasmResult::Reply(reply) => reply,
+            WasmResult::Reject(e) => anyhow::bail!("reject error: {:?}", e),
+        };
+
+        let decoded = Decode!(&reply, R)?;
+        Ok(decoded)
+    }
+
+    /// Performs update call with the given arguments.
+    async fn update_live<T, R>(&self, method: &str, args: T) -> anyhow::Result<R>
+    where
+        T: ArgumentEncoder + Send + Sync,
+        R: DeserializeOwned + CandidType,
+    {
+        let args = candid::encode_args(args)?;
+
+        let message_id = self
+            .client
+            .submit_call(self.canister, Self::admin(), method, args)
+            .await
+            .map_err(|e| anyhow::anyhow!(e))?;
+
+        let res = self
+            .client
+            .await_call(message_id)
             .await
             .map_err(|e| anyhow::anyhow!(e))?;
 
