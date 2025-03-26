@@ -49,6 +49,6 @@ node index.js
 ### Run tests
 
 ```sh
-just build
+just build_all_canisters
 just test
 ```
